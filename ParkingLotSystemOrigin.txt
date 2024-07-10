@@ -1,0 +1,160 @@
+
+using System.Drawing;
+using System.Numerics;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices;
+
+public class Program
+{
+    /*
+    Design Parking Lot System
+
+    A parking lot or car park is a dedicated cleared area that is intended for parking vehicles.
+
+    "System Requirements"
+    We will focus on the following set of requirements while designing the parking lot:
+
+    - The parking lot has only one entry and one exit.
+    - The parking lot should have multiple floors where customers can park their cars.
+    - Each parking floor will have many parking spots.
+    - Each floor will have several display board showing the number of empty spots.
+    - Cars have two types -- 'electric' and 'petrol'. 
+    - Electric cars charge $1 per hour
+    - Petrol cars charge $2 per hour
+    - Customers can get the receipt and pay for the parking fee based on car type and parking time.
+
+    - [optional] For the members of the parking lot, they can receive the message notification on their phone when entering and leaving the parking lot
+
+    Please design and implement the main objects/interfaces/properties for the two use cases:
+    1. Parking the car
+    2. Unparking the car
+    */
+
+    private static void Main(string[] args)
+    {
+        var parkingLot = new ParingLot();
+        parkingLot.floors.Add(new Floors());
+
+        var car = new Car();
+        // carUserName, Type;
+        parkingLot.NewCar();
+        // decide wither paring
+        var message = paringLot.ParkingACar(car);
+
+        // sensor 
+        while ()
+        {
+            new sensor.detect();
+        }
+
+        var fee = parkingLot.UnParking(car);
+        new receipt 
+    }
+
+
+}
+
+
+
+public class Car
+{
+    String type;
+    String userName;
+    DateTime entryTime;
+    DateTime leavingTime;
+    int floor;
+
+    public Car(string type, string userName) 
+    {
+        this.type = type;
+        this.userName = userName;
+    }
+
+    public int ParingHours()
+    { 
+        int hours = entryTime.Hour - leavingTime.Hour;
+    }
+}
+
+public class ParingLot
+{
+    Floor[] floors;
+
+    public string ParkingACar(Car car)
+    {
+        var availableFloor = null;
+        // loop the foors check available
+        foreach (var floor in foors)
+        {
+            if(floor.haveFreeSpots()) availableFloor = floor;
+        }
+        if (availableFloor != null)
+        {
+            // entryTime;
+            car.entryTime = DateTime.Now;
+
+            return "pls come in";
+        }
+        else 
+        {
+            return "sorry";
+        }
+    }
+
+    public int UnParking(Car car)
+    { 
+        // leaving time 
+        car.Leavitime = DateTime.Now;
+
+
+        var fee = 0;
+        if (car.GetType == "electric")
+        {
+            fee = car.ParingHours * 1;
+        }
+        else 
+        {
+            fee = car.ParingHours * 2;
+        }
+
+        return fee;
+    }
+
+}
+
+public class Floor
+{
+    // spots: 0,1,2,3.... 0:no car 1: parking a car
+    int[] spots;
+
+    public void sensorParkInACar(int spot)
+    {
+        this.spots[spot] = 1;
+    }
+
+    public void sensorLeaving(int spot)
+    { 
+    }
+
+    public bool haveFreeSpots()
+    { 
+        for
+    }
+}
+
+public class Dashbord
+{ 
+    Floor floor;
+
+    public int showAvailableSpots()
+    {
+        return 1;
+    }
+}
+
+public class Number
+{ 
+
+}
+
+
